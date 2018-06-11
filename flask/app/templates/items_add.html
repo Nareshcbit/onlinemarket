@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}  eMarket - Nxglab   {% endblock %}
+
+
+{% block body %}
+
+  {% if user_message == "Add" %}
+   
+   <h3>Added Successfully </h3>
+
+  {% endif %}
+  <form class="form-horizontal" action="{{ url_for('items_add') }}" method=post>
+    {{ form.hidden_tag() }}
+ 
+ 	<div class="heading">
+        <h4 class="form-heading">Please add item details below:</h4>
+        <br/>
+    </div>
+
+    <div class="form-group row">
+		{{ form.Category.label(class="col-sm-1") }}
+		<div class="col-sm-4"> {{ form.Category(class="form-control") }} </div>
+	</div>
+
+ 	<div class="form-group row">
+		{{ form.Vendor.label(class="col-sm-1") }}
+		<div class="col-sm-4"> {{ form.Vendor(class="form-control") }} </div>
+    </div>
+	
+ 	
+ 	<div class="form-group row">
+		{{ form.Model.label(class="col-sm-1") }}
+		<div class="col-sm-4"> {{ form.Model(class="form-control") }} </div>
+	</div>
+
+	<div class="form-group row">
+		{{ form.Price.label(class="col-sm-1") }}
+		<div class="col-sm-4"> {{ form.Price(class="form-control") }} </div>
+	</div>
+   
+
+ 	<div class="form-group row" >
+ 		<div class="col-sm-5 align-items-center"> {{ form.submit(class="btn btn-primary") }}  </div>		
+    </div>
+    
+  </form>
+{% endblock %}

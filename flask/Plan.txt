@@ -1,0 +1,24 @@
+1. BootStrap
+2. Jinja Template
+3. Dynamic -> Stub
+4. MySql
+5. Redis
+
+
+docker build -t nxgcloud/emarket-web:0.0.1 build/web/
+
+docker build -t nxgcloud/emarket:0.0.1 .
+
+docker run -d --name=webc01 nxgcloud/emarket:0.0.1
+
+https://gist.github.com/swdevbali/f4adcacd402216256dd8
+
+
+a : False 
+b: [{'Price': 1200, 'Uid': 1, 'Vendor': 'Dell', 'Model': 'XPS', 'Category': 'Mobile'}] 
+c: [{"Price": 1200, "Uid": 1, "Vendor": "Dell", "Model": "XPS", "Category": "Mobile"}] 
+d: [{'Price': 1200, 'Uid': 1, 'Vendor': 'Dell', 'Model': 'XPS', 'Category': 'Mobile'}] 
+
+
+
+

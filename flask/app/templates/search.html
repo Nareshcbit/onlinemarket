@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}  eMarket - Nxglab		{% endblock %}
+
+{% block body %}
+
+ 		<form class="inline" action="{{ url_for('search') }}" method=post>
+    		{{ form.hidden_tag() }}
+
+		   	<!-- Search form -->
+		   	<p>Search items by category?. </p>
+		   	<div class="row">
+		    <div class="col-xs-6 col-md-4">
+		      <div class="input-group">
+		       	{{ form.Category(class="form-control", placeholder="Example: Laptop, Mobile, Tablet, etc.") }}
+		         <div class="input-group-btn">
+		          <button class="btn btn-primary" type="submit">
+		            <span class="glyphicon glyphicon-search"></span>
+		          </button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		    
+		 </form>
+
+
+		 <br/><br/>
+		 
+		 <h4> Key: {{ key}} Items :  </h4>
+		 {% if found_in_cache == "True"  %}
+
+		 	<div class="alert alert-success" role="alert"> Result is in cache! </div>
+		 {% else %}
+
+		 	<div class="alert alert-warning" role="alert"> Result is not in cache! </div>
+
+		 {% endif %}
+
+
+		<table class="table">
+	    <!--Table head-->
+	    <thead>
+	        <tr>
+      				<th>Uid</th>
+      				<th>Category</th>
+      				<th>Vendor</th>      				
+      				<th>Model</th>
+      				<th>Price</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+
+			{% for record in result %}
+			<tr>
+      				<td>{{record.Uid}}</td>
+      				<td>{{record.Category}}</td>
+      				<td>{{record.Vendor}}</td>
+      				<td>{{record.Model}}</td>
+      				<td>{{record.Price}}</td>
+   			</tr>
+			{% endfor %}
+
+	 	</tbody>
+	</table>
+
+{% endblock%}
