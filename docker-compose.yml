@@ -2,11 +2,17 @@ version: "3"
 services:
   redis:
     build: redis
+    ports:
+      - "6379: 6379"
   mysql:
     build: mysql
+    ports:
+      -"3306:3306"
   flask:
     build: flask
     depends_on:
       - mysql
       - redis
+    ports:
+      -"5000:5000"
     restart: on-failure
