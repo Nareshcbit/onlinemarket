@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   redis:
     build: redis
@@ -9,3 +9,4 @@ services:
     depends_on:
       - mysql
       - redis
+    restart: on-failure
