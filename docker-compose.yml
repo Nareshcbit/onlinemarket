@@ -6,3 +6,6 @@ services:
     build: mysql
   flask:
     build: flask
+    depends_on:
+      - mysql
+      - redis
