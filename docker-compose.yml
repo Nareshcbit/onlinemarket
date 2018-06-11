@@ -8,11 +8,3 @@ services:
     build: mysql
     ports:
       - "3306:3306"
-  flask:
-    build: flask
-    depends_on:
-      - mysql
-      - redis
-    ports:
-      - "5000:5000"
-    restart: on-failure
