@@ -6,6 +6,6 @@ services:
     command:
       - /bin/sh
       - -c
-      - /emarket/startup.sh
+      - $APP_DIR/startup.sh
     ports:
       - "5000:5000"
