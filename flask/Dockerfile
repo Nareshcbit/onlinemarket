@@ -14,4 +14,5 @@ COPY . ${APP_DIR}
 RUN pip install --no-cache-dir -r ${APP_DIR}/requirements.txt
 WORKDIR ${APP_DIR}
 
+RUN chmod +x ${APP_DIR}/startup.sh
 EXPOSE 5000
