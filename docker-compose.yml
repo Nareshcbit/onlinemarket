@@ -39,7 +39,7 @@ services:
       MYSQL_PASSWORD: "Welcome"
     healthcheck:
       test: "/usr/bin/mysql --user=naresh --password=Welcome --execute \"SHOW DATABASES;\""
-      interval: 3s
+      interval: 15s
       timeout: 1s
       retries: 5
   redis:
