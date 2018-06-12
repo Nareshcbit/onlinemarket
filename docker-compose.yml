@@ -9,3 +9,18 @@ services:
       - /emarket/startup.sh
     ports:
       - "5000:5000"
+  mysql:
+    image: mysql:5.7
+    container_name: "dbc02"
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "Welcome"
+      MYSQL_DATABASE: "mydb"
+      MYSQL_USER: "naresh"
+      MYSQL_PASSWORD: "Welcome"
+  redis:
+    image: redis:3.2.11
+    container_name: "redisc02"
+    ports: 
+      - "6379:6379"
