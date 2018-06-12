@@ -1,6 +1,7 @@
 version: "3"
 services:
   flask:
+    container_name: "flaskc02"
     build: flask
     command:
       - /bin/sh
