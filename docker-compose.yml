@@ -2,6 +2,14 @@ version: "3"
 services:
   flask:
     build: flask
+    command:
+      - /bin/sh
+      - -c
+      - |
+          flask db init
+          flask db migrate
+          flask db upgrade
+          flask run --host=0.0.0.0
     ports:
       - "5000:5000"
   mysql:
