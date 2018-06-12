@@ -15,8 +15,3 @@ services:
     container_name: "redisc02"
     ports: 
       - "6379:6379"
-  flask:
-    build: flask
-    ports:
-      - "5000:5000"
-    restart: on-failure
