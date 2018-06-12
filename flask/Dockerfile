@@ -2,6 +2,7 @@ FROM python:alpine3.6
 
 
 ARG APP_DIR='/emarket'
+ENV APP_DIR=${APP_DIR}
 ENV FLASK_APP=emarket.py
 ENV REDIS_HOST='192.168.0.18'
 ENV DATABASE_URL='mysql+pymysql://naresh:Welcome@192.168.0.18/mydb'
