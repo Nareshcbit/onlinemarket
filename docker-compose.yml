@@ -2,21 +2,16 @@ version: "2.2"
 services:
   flask:
     container_name: "flaskc02"
-    build: flask
-    command:
-      - /bin/sh
-      - -c
-      - /emarket/startup.sh
+    build: ./flask
     ports:
       - "5000:5000"
     depends_on:
       mysql:
         condition: service_healthy 
+    command: ["/bin/sh", "-c", "/emarket/startup.sh"]
   mysql:
     image: mysql:5.7
     container_name: "dbc02"
-    ports: 
-      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "Welcome"
       MYSQL_DATABASE: "mydb"
@@ -27,6 +22,8 @@ services:
       interval: 15s
       timeout: 1s
       retries: 5
+    ports: 
+      - "3306:3306"
   redis:
     image: redis:3.2.11
     container_name: "redisc02"
