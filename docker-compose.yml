@@ -2,7 +2,7 @@ version: "2.2"
 services:
   flask:
     container_name: "web"
-    image: nxgcloud/om-web:0.0.1
+    image: nxgcloud/onlinemarket-web:0.0.1
     build: ./flask
     ports:
       - "5000:5000"
